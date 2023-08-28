@@ -2,13 +2,25 @@
 sidebar_position: 6
 ---
 
-# Setting up VSCode for Development
+# VSCode Configuration
 
-Visual Studio Code (VSCode) is a powerful and lightweight code editor that supports a wide range of programming languages. You can optimize your VSCode setup to enhance your development experience. Here's a recommended configuration:
+Elevate your development experience with Visual Studio Code (VSCode) by customizing its configuration for your project. Follow our recommendations below to set up features like IntelliSense and integrate Docker containers.
 
-## Configuring IntelliSense
+## Recommended Extensions
 
-To enable auto-complete, syntax highlighting, and other IntelliSense features for development in VSCode, set up the `c_cpp_properties.json` file in your `.vscode` directory.
+**File:`.vscode/extensions.json`**
+```
+{
+    "recommendations": [
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools"
+    ]
+}
+```
+## Enabling IntelliSense
+
+To add auto-complete, syntax highlighting, and other IntelliSense features for development in VSCode, set up the `c_cpp_properties.json` file in your `.vscode` directory.
 
 **File: `.vscode/c_cpp_properties.json`**
 ```
@@ -28,4 +40,38 @@ To enable auto-complete, syntax highlighting, and other IntelliSense features fo
     ],
     "version": 4
 }
+```
+
+## Integrating Docker Containers
+
+Leverage the Dev Containers extension in VSCode and the provided configuration file to seamlessly use Docker containers for your development setup.
+
+**File: `.devcontainer/devcontainer.json`**
+```
+{
+    "name": "Lantern Dev",
+    "dockerFile": "../Dockerfile.dev",
+    "context": "..",
+    "runArgs": [
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined",
+        "-e",
+        "POSTGRES_PASSWORD=postgres"
+    ],
+    "mounts": ["source=${localWorkspaceFolder},target=/lanterndb,type=bind,consistency=cached"],
+    "overrideCommand": false,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    }
+}
+
 ```
