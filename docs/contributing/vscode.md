@@ -12,7 +12,9 @@ Elevate your development experience with Visual Studio Code (VSCode) by customiz
 ```
 {
     "recommendations": [
-        "ms-vscode-remote.remote-containers"
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools"
     ]
 }
 ```
@@ -61,7 +63,10 @@ Leverage the Dev Containers extension in VSCode and the provided configuration f
     "overrideCommand": false,
     "customizations": {
         "vscode": {
-            "extensions": [],
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools"
+            ],
             "settings": {
                 "terminal.integrated.shell.linux": "/bin/bash"
             }
