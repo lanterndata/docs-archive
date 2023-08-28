@@ -38,12 +38,14 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/lanterndata/docs',
         },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -57,23 +59,32 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Lantern Docs',
         logo: {
           alt: 'Lantern logo',
           src: 'img/logo.svg',
+          href: 'https://lantern.dev',
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
+            to: '/',
+            label: 'Docs',
+            position: 'left'
           },
-          {to: 'https://blog.lantern.dev', label: 'Blog', position: 'left'},
+          {
+            href: 'https://blog.lantern.dev',
+            label: 'Blog',
+            position: 'right',
+            style: {
+            marginRight: '8px'
+            }
+          },
           {
             href: 'https://github.com/lanterndata/lanterndb',
             label: 'GitHub',
             position: 'right',
+            style:{
+              marginRight: '8px'
+            }
           },
         ],
       },
