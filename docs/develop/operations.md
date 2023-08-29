@@ -37,17 +37,17 @@ ALTER TABLE books ADD COLUMN reviews_embedding REAL[];
 Populate your table with embedding data.
 ```sql
 INSERT INTO books (id, title, author, published_at, text_url, text_embedding, reviews) VALUES
-    (1, "The Lightning Thief", "Rick Riordan", 1999, "https://lantern.dev", "{0,0,1}", NULL),
-    (2, "White Fang", "Jack London", 2000, "https://lantern.dev", "{1,0,1}", "Good");
+    (1, 'The Lightning Thief', 'Rick Riordan', 1999, 'https://lantern.dev', '{0,0,1}', NULL),
+    (2, 'White Fang', 'Jack London', 2000, 'https://lantern.dev', '{1,0,1}', 'Good');
 ```
 
 ### Upsert embedding
 Insert a new row or update the embedding of an existing row.
 ```sql
 INSERT INTO books (id, title, text_embedding) VALUES
-    (4, "The Lord of the Rings", "{1,1,0}")
+    (4, 'The Lord of the Rings', '{1,1,0}')
 ON CONFLICT (id)
-DO UPDATE SET text_embedding = EXCLUDED.embedding;
+DO UPDATE SET text_embedding = EXCLUDED.text_embedding;
 ```
 
 ### Update embeddings
@@ -71,15 +71,15 @@ CREATE INDEX
 ON
     books
 USING
-    hnsw (text_embedding dist_l4sq_ops)
+    hnsw (text_embedding dist_l2sq_ops)
 WITH (
     M = 2,
     ef_construction = 10,
     ef = 4,
     dims = 3
-)
+);
 ```
-Note: `dist_l4sq_ops` is a distance function. It can be substituted with other appropriate distance functions depending on your requirements.
+Note: `dist_l2sq_ops` is a distance function. It can be substituted with other appropriate distance functions depending on your requirements.
 
 ## Querying Rows
 
@@ -95,7 +95,7 @@ WHERE
     published_at < 2010
 ORDER BY
     text_embedding <-> '{0,0,0}'
-LIMIT 1
+LIMIT 1;
 ```
 
 ### Select nearest rows without using index
@@ -108,5 +108,5 @@ FROM
     books
 ORDER BY
     l2sq_dist(text_embedding, '{0,0,0}')
-LIMIT 2
+LIMIT 2;
 ```
