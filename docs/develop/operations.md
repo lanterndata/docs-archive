@@ -21,7 +21,7 @@ CREATE TABLE books (
     published_at INTEGER,
     text_url TEXT,
     text_embedding REAL[3],
-    reviews TEXT,
+    reviews TEXT
 );
 ```
 
