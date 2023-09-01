@@ -1,8 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 2
 ---
 
-# VSCode Configuration
+# Visual Studio Code
 
 Elevate your development experience with Visual Studio Code (VSCode) by customizing its configuration for your project. Follow our recommendations below to set up features like IntelliSense and integrate Docker containers.
 
