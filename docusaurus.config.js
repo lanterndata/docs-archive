@@ -127,7 +127,7 @@ const config = {
           //   ],
           // },
         ],
-        copyright: ` Lantern, Inc. ${new Date().getFullYear()}`,
+        copyright: ` Lantern Systems, Inc. ${new Date().getFullYear()}`,
       },
       prism: {
         theme: lightCodeTheme,
