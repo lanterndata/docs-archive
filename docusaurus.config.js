@@ -47,6 +47,7 @@ const config = {
           src: 'img/logo-light.svg',
           srcDark: 'img/logo-dark.svg',
           href: 'https://lantern.dev',
+          target: '_self',
         },
         items: [
           {
@@ -66,10 +67,11 @@ const config = {
             }
           },
           {
+            target: '_self',
             href: 'https://github.com/lanterndata/lanterndb',
             label: 'GitHub',
             position: 'right',
-            style:{
+            style: {
               marginRight: '8px'
             }
           },
