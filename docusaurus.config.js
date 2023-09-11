@@ -1,6 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -9,24 +8,12 @@ const config = {
   title: 'Lantern',
   tagline: 'PostgreSQL-based database for AI',
   favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
   url: 'https://docs.lantern.dev',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'lanterndata', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
-
+  organizationName: 'lanterndata',
+  projectName: 'docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -38,14 +25,11 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
+          routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/lanterndata/docs',
         },
-        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -56,26 +40,29 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         logo: {
           alt: 'Lantern logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-light.svg',
+          srcDark: 'img/logo-dark.svg',
           href: 'https://lantern.dev',
         },
         items: [
           {
-            to: '/',
+            to: '/docs',
             label: 'Docs',
-            position: 'left'
+            position: 'left',
+            style: {
+              marginRight: '8px'
+            }
           },
           {
-            href: 'https://blog.lantern.dev',
+            to: '/blog',
             label: 'Blog',
-            position: 'right',
+            position: 'left',
             style: {
-            marginRight: '8px'
+              marginRight: '8px'
             }
           },
           {
@@ -89,45 +76,9 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
-        links: [
-          // {
-          //   title: 'Docs',
-          //   items: [
-          //     {
-          //       label: 'Tutorial',
-          //       to: '/docs/intro',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'Community',
-          //   items: [
-          //     {
-          //       label: 'Discord',
-          //       href: 'https://discordapp.com/invite/docusaurus',
-          //     },
-          //     {
-          //       label: 'Twitter',
-          //       href: 'https://twitter.com/docusaurus',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'More',
-          //   items: [
-          //     {
-          //       label: 'Blog',
-          //       to: 'https://blog.lantern.dev',
-          //     },
-          //     {
-          //       label: 'GitHub',
-          //       href: 'https://github.com/lanterndata/lanterndb',
-          //     },
-          //   ],
-          // },
-        ],
-        copyright: ` Lantern, Inc. ${new Date().getFullYear()}`,
+        style: 'light',
+        links: [],
+        copyright: ` Lantern Systems, Inc. ${new Date().getFullYear()}`,
       },
       prism: {
         theme: lightCodeTheme,
