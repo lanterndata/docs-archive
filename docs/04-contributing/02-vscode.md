@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Visual Studio Code
 
 Elevate your development experience with Visual Studio Code (VSCode) by customizing its configuration for your project. Follow our recommendations below to set up features like IntelliSense and integrate Docker containers.
@@ -9,6 +5,7 @@ Elevate your development experience with Visual Studio Code (VSCode) by customiz
 ## Recommended Extensions
 
 **File:`.vscode/extensions.json`**
+
 ```
 {
     "recommendations": [
@@ -18,11 +15,13 @@ Elevate your development experience with Visual Studio Code (VSCode) by customiz
     ]
 }
 ```
+
 ## Enabling IntelliSense
 
 To add auto-complete, syntax highlighting, and other IntelliSense features for development in VSCode, set up the `c_cpp_properties.json` file in your `.vscode` directory. `.vscode/c_cpp_properties` is configured to use `./build/compile_commands.json`. If you build lanterndb in a different directory, make sure to update `.vscode` config appropriately in order to have IntelliSense working.
 
 **File: `.vscode/c_cpp_properties.json`**
+
 ```
 {
     "configurations": [
@@ -47,6 +46,7 @@ To add auto-complete, syntax highlighting, and other IntelliSense features for d
 Leverage the Dev Containers extension in VSCode and the provided configuration file to seamlessly use Docker containers for your development setup.
 
 **File: `.devcontainer/devcontainer.json`**
+
 ```
 {
     "name": "Lantern Dev",
