@@ -71,4 +71,4 @@ _**Switch from pgvector, get FREE AirPods Pro**_
 
 _**Want to build AI applications and don’t know where to start?**_
 
-- Book some time here, we will meet for FREE and help you get set up on Lantern
+- Book some time [here](https://calendly.com/narek-lantern/advice-for-building-ai-applications), we will meet for FREE and help you get set up on Lantern
