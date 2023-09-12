@@ -40,6 +40,7 @@ _**Here’s what we support today:**_
 _**Here’s what’s coming soon:**_
 
 - Cloud-hosted version of Lantern
+- Templates and guides for building applications for different industries
 - Tools for generating embeddings (support for third party model API's, more local models)
 - Support for version control and A/B test embeddings
 - Autotuned index type that will choose appropriate index creation parameters

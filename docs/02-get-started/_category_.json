@@ -1,6 +1,6 @@
 {
   "label": "Get Started",
-  "position": 2,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "Let's get up and running with Lantern!"

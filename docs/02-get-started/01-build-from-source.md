@@ -1,12 +1,9 @@
----
-sidebar_position: 1
----
-
 # Build From Source
 
 Steps to build LanternDB yourself
 
 If compiling from source, also needed (todo:: specify versions):
+
 - cmake
 - gcc
 - g++
