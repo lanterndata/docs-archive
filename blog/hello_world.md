@@ -3,11 +3,11 @@ slug: /hello_world
 sidebar_position: 1
 ---
 
-# Hello World 👋
+# Lantern — a PostgreSQL vector database for building AI applications
 
 ## 📌 TL;DR
 
-Lantern is the best PostgreSQL vector database extension for building AI applications. Install and use our extension [here](https://github.com/lanterndata/lanterndb).
+Lantern is the best PostgreSQL vector database extension for building AI applications. Install and use our extension **[here](https://github.com/lanterndata/lanterndb)**.
 
 ## 📈 Performance + Benchmarks
 
@@ -24,7 +24,7 @@ Graph 2 — Latency
 
 Graph 3 — Index Creation
 
-Our database is built on top of usearch — a state of the art implementation of HNSW, the most scalable and performant algorithm for handling vector search. Many more exciting improvements are coming soon.
+Our database is built on top of usearch — a state of the art implementation of HNSW, the most scalable and performant algorithm for handling vector search.
 
 ## 🚀 Features today + Coming soon
 
@@ -69,11 +69,11 @@ _**Send us feedback + report bugs**_
 _**Switch from pgvector, get FREE AirPods Pro**_
 
 - If you’re already using pgvector in production for your business, switching to Lantern is very easy
-- Book some time [here](https://calendly.com/narek-lantern/20min)\*\*, and we will help switch you over for FREE and get you a pair of FREE AirPods Pro
+- Book some time **[here](https://calendly.com/narek-lantern/20min)**, and we will help switch you over for FREE and get you a pair of FREE AirPods Pro
 
 _**Want to build AI applications and don’t know where to start?**_
 
-- Book some time [here](https://calendly.com/narek-lantern/advice-for-building-ai-applications), we will meet for FREE and help you get set up on Lantern
+- Book some time **[here](https://calendly.com/narek-lantern/advice-for-building-ai-applications)**, we will meet for FREE and help you get set up on Lantern
 
 _**Want to contribute or join the team?**_
 
