@@ -56,9 +56,11 @@ _**We think it's super important to build on top of PostgreSQL**_
 - Companies already store their data on PostgreSQL.
 - Standalone vector databases have to rebuild all of what PostgreSQL has built for the past 30-years, including all of the optimizations on how to best store and access data.
 
-Lantern is building the most performant vector database and the best suite of tools to help developers build AI applications. We want to help companies build useful applications using their unstructured and structured data.
+Lantern is building the most performant vector database and the best suite of tools to help developers build AI applications.
 
-## 🎁 Asks + Offers (FREE AirPods Pro and AI-application building advice)
+We want to help companies build useful applications using their unstructured and structured data.
+
+## 🎁 Asks + Offers (FREE AirPods + advice)
 
 _**Send us feedback + report bugs**_
 
@@ -67,8 +69,13 @@ _**Send us feedback + report bugs**_
 _**Switch from pgvector, get FREE AirPods Pro**_
 
 - If you’re already using pgvector in production for your business, switching to Lantern is very easy
-- Book some time [here](https://calendly.com/narek-lantern/20min), and we will help switch you over for FREE and get you a pair of FREE AirPods Pro
+- Book some time [here](https://calendly.com/narek-lantern/20min)\*\*, and we will help switch you over for FREE and get you a pair of FREE AirPods Pro
 
 _**Want to build AI applications and don’t know where to start?**_
 
 - Book some time [here](https://calendly.com/narek-lantern/advice-for-building-ai-applications), we will meet for FREE and help you get set up on Lantern
+
+_**Want to contribute or join the team?**_
+
+- Reach out to support@lantern.dev, we can find an open issue or project that suits you
+- We are also hiring full time engineers. Send your resume to support@lantern.dev!
