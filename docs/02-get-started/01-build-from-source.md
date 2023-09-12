@@ -2,9 +2,31 @@
 
 Steps to build LanternDB yourself
 
-If compiling from source, also needed (todo:: specify versions):
+# Prerequisites
 
-- cmake
+- cmake (>=3.3)
 - gcc
-- g++
+- g++ (>=11)
 - PostgreSQL 11, 12, 13, 14 or 15
+- Corresponding development package for PostgreSQL (postgresql-server-dev-$version)
+
+1. Clone repository from GitHub
+
+```bash
+git clone --recursive https://github.com/lanterndata/lanterndb.git
+```
+
+2. Run cmake
+
+```bash
+cd lanterndb
+mkdir build
+cd build
+cmake ..
+```
+
+3. Install the extension
+
+```bash
+make install
+```
