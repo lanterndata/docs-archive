@@ -9,24 +9,6 @@ sidebar_position: 1
 
 Lantern is the best PostgreSQL vector database extension for building AI applications. Install and use our extension **[here](https://github.com/lanterndata/lanterndb)**.
 
-## 📈 Performance + Benchmarks
-
-Lantern is a PostgreSQL extension that creates an index to efficiently search for similar vectors.
-
-_**Important takeaways:**_
-
-- There's three key metrics we track. `CREATE INDEX` time, `SELECT` throughput, and `SELECT` latency.
-- We match or outperform `pgvector` and `pg_embedding` (Neon) on all of these metrics.
-- We plan to continue to make performance improvements to ensure we are the best performing database.
-
-![Throughput](/graphs/throughput.png)
-
-![Latency](/graphs/latency.png)
-
-![Index Creation](/graphs/create.png)
-
-Our database is built on top of usearch — a state of the art implementation of HNSW, the most scalable and performant algorithm for handling vector search.
-
 ## 🚀 Features today + Coming soon
 
 We have the most complete feature set of all the PostgreSQL vector database extensions.
@@ -47,6 +29,24 @@ _**Here’s what’s coming soon:**_
 - Autotuned index type that will choose appropriate index creation parameters
 - 1 byte and 2 byte vector elements, and up to 8000 dimensional vectors support
 - Request a feature at support@lantern.dev
+
+## 📈 Performance + Benchmarks
+
+Lantern is a PostgreSQL extension that creates an index to efficiently search for similar vectors.
+
+_**Important takeaways:**_
+
+- There's three key metrics we track. `CREATE INDEX` time, `SELECT` throughput, and `SELECT` latency.
+- We match or outperform `pgvector` and `pg_embedding` (Neon) on all of these metrics.
+- We plan to continue to make performance improvements to ensure we are the best performing database.
+
+![Throughput](/graphs/throughput.png)
+
+![Latency](/graphs/latency.png)
+
+![Index Creation](/graphs/create.png)
+
+Our database is built on top of usearch — a state of the art implementation of HNSW, the most scalable and performant algorithm for handling vector search.
 
 ## 🌱 Why we started Lantern
 
