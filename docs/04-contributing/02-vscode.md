@@ -18,7 +18,7 @@ Elevate your development experience with Visual Studio Code (VSCode) by customiz
 
 ## Enabling IntelliSense
 
-To add auto-complete, syntax highlighting, and other IntelliSense features for development in VSCode, set up the `c_cpp_properties.json` file in your `.vscode` directory. `.vscode/c_cpp_properties` is configured to use `./build/compile_commands.json`. If you build lanterndb in a different directory, make sure to update `.vscode` config appropriately in order to have IntelliSense working.
+To add auto-complete, syntax highlighting, and other IntelliSense features for development in VSCode, set up the `c_cpp_properties.json` file in your `.vscode` directory. `.vscode/c_cpp_properties` is configured to use `./build/compile_commands.json`. If you build Lantern in a different directory, make sure to update `.vscode` config appropriately in order to have IntelliSense working.
 
 **File: `.vscode/c_cpp_properties.json`**
 
@@ -59,7 +59,7 @@ Leverage the Dev Containers extension in VSCode and the provided configuration f
         "-e",
         "POSTGRES_PASSWORD=postgres"
     ],
-    "mounts": ["source=${localWorkspaceFolder},target=/lanterndb,type=bind,consistency=cached"],
+    "mounts": ["source=${localWorkspaceFolder},target=/lantern,type=bind,consistency=cached"],
     "overrideCommand": false,
     "customizations": {
         "vscode": {
