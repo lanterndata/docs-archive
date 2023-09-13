@@ -17,7 +17,7 @@ _**Here’s what we support today:**_
 - Creating an AI application end to end without leaving your database ([example](https://github.com/ezra-varady/lanterndb-semantic-image-search))
 - Embedding generation for popular use cases (CLIP model, Hugging Face models, custom model)
 - Interoperability with pgvector's data type, so anyone using pgvector can switch to Lantern
-- Parallel index creation capabilities (up to 40x faster than constructors like pgvector + pgembedding). Support for creating the index outside of the database and inside another instance allows you to create an index without interrupting database workflows.
+- Parallel index creation capabilities -- Support for creating the index outside of the database and inside another instance allows you to create an index without interrupting database workflows.
 
 _**Here’s what’s coming soon:**_
 
