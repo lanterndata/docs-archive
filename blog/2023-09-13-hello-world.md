@@ -6,7 +6,7 @@ authors: [jeung, narek]
 
 ## 📌 TL;DR
 
-Lantern is the best PostgreSQL vector database extension for building AI applications. Install and use our extension **[here](https://github.com/lanterndata/lanterndb)**.
+Lantern is the best PostgreSQL vector database extension for building AI applications. Install and use our extension **[here](https://github.com/lanterndata/lantern)**.
 
 ## 🚀 Features today + Coming soon
 

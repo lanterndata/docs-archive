@@ -1,6 +1,6 @@
 # Build From Source
 
-Steps to build LanternDB yourself
+Steps to build Lantern yourself
 
 # Prerequisites
 
@@ -13,13 +13,13 @@ Steps to build LanternDB yourself
 1. Clone repository from GitHub
 
 ```bash
-git clone --recursive https://github.com/lanterndata/lanterndb.git
+git clone --recursive https://github.com/lanterndata/lantern.git
 ```
 
 2. Run cmake
 
 ```bash
-cd lanterndb
+cd lantern
 mkdir build
 cd build
 cmake ..

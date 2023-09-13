@@ -2,11 +2,11 @@
 
 Use our releases from GitHub
 
-You can get available versions on [releases](https://github.com/lanterndata/lanterndb/releases) page
+You can get available versions on [releases](https://github.com/lanterndata/lantern/releases) page
 
 # Prerequisites
 
-Packages required by LanternDB
+Packages required by Lantern
 
 Always required:
 
@@ -17,9 +17,9 @@ Always required:
 ```bash
 cd /tmp
 LDB_VERSION=0.0.3
-wget "https://github.com/lanterndata/lanterndb/releases/download/v${LDB_VERSION}/lanterndb-${LDB_VERSION}.tar"
-tar xf "lanterndb-${LDB_VERSION}.tar"
-cd "lanterndb-${LDB_VERSION}"
+wget "https://github.com/lanterndata/lantern/releases/download/v${LDB_VERSION}/lantern-${LDB_VERSION}.tar"
+tar xf "lantern-${LDB_VERSION}.tar"
+cd "lantern-${LDB_VERSION}"
 make install
 ```
 

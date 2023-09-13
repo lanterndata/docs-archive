@@ -68,7 +68,7 @@ const config = {
           },
           {
             target: '_self',
-            href: 'https://github.com/lanterndata/lanterndb',
+            href: 'https://github.com/lanterndata/lantern',
             label: 'GitHub',
             position: 'right',
             style: {

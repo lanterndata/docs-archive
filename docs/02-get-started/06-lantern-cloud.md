@@ -1,3 +1,3 @@
 # Lantern Cloud (coming soon)
 
-The best place to run LanternDB
+The best place to run Lantern

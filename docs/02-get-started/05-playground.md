@@ -1,3 +1,3 @@
-# Online LanternDB playground
+# Online Lantern playground
 
-One-click LanternDB setup and examples
+One-click Lantern setup and examples
