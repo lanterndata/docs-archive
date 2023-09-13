@@ -1,6 +1,5 @@
 ---
-slug: /hello_world
-sidebar_position: 1
+authors: [jeung, narek]
 ---
 
 # Lantern — a PostgreSQL vector database for building AI applications
