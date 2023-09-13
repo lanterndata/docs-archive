@@ -15,14 +15,13 @@ Lantern is a PostgreSQL extension that creates an index to efficiently search fo
 
 _**Important takeaways:**_
 
-- Lantern is already 40x faster than pgvector and Neon’s pgembedding at creating an index to store data.
-- We match and often outperform pgvector and Neon’s pgembedding on latency + throughput.
+- We match and often outperform pgvector and Neon’s pgembedding on latency + throughput (transactions per second).
 
-Graph 1 — Throughput
+![Throughput](/graphs/throughput.png)
 
-Graph 2 — Latency
+![Latency](/graphs/latency.png)
 
-Graph 3 — Index Creation
+![Index Creation](/graphs/create.png)
 
 Our database is built on top of usearch — a state of the art implementation of HNSW, the most scalable and performant algorithm for handling vector search.
 
