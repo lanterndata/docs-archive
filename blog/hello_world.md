@@ -15,7 +15,9 @@ Lantern is a PostgreSQL extension that creates an index to efficiently search fo
 
 _**Important takeaways:**_
 
-- We match and often outperform pgvector and Neon’s pgembedding on latency + throughput (transactions per second).
+- There's three key metrics we track. `CREATE INDEX` time, `SELECT` throughput, and `SELECT` latency.
+- We match or outperform `pgvector` and `pg_embedding` (Neon) on all of these metrics.
+- We plan to continue to make performance improvements to ensure we are the best performing database.
 
 ![Throughput](/graphs/throughput.png)
 
