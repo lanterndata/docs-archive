@@ -25,7 +25,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/docs',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/lanterndata/docs',
@@ -51,7 +51,7 @@ const config = {
         },
         items: [
           {
-            to: '/docs',
+            to: '/',
             label: 'Docs',
             position: 'left',
             style: {
@@ -59,7 +59,7 @@ const config = {
             }
           },
           {
-            to: '/blog',
+            href: 'https://lantern.dev/blog',
             label: 'Blog',
             position: 'left',
             style: {
