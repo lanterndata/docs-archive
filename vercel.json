@@ -1,7 +1,7 @@
 {
     "redirects": [
       {
-        "source": "/2023/09/13/hello-world",
+        "source": "/blog/2023/09/13/hello-world",
         "destination": "https://lantern.dev/blog/hello-world",
         "statusCode": 302
       }
