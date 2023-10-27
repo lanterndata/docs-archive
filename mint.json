@@ -6,9 +6,9 @@
     },
     "favicon": "/favicon.png",
     "colors": {
-      "primary": "#F8CF00",
-      "light": "#FFD70D",
-      "dark": "#F8CF00"
+      "primary": "#ff564b",
+      "light": "#ff564b",
+      "dark": "#ff564b"
     },
     "topbarCtaButton": {
       "type": "github",
