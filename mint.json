@@ -63,7 +63,7 @@
       "redirects": [
         {
           "source": "/blog/2023/09/13/hello-world",
-          "destination": "https://lantern.dev/blog/hello-world",
+          "destination": "https://lantern.dev/blog/hello-world"
         }
       ]
   }
