@@ -5,28 +5,26 @@ description: "The `Dockerfile.dev` streamlines the setup process for contributor
 
 ## Instructions[](#instructions "Direct link to Instructions")
 
-
 <Steps>
   <Step title="Build the Docker image">
 Navigate to the root directory and execute
 
 ```bash
 docker build -t lantern-dev -f Dockerfile.dev .
-
 ```
+
   </Step>
   <Step title="Run the Docker container">
 ```bash
 docker run --name lantern-container -d lantern-dev
-
-```
+````
   </Step>
   <Step title="Acess the development environment">
 
 ```bash
 docker exec -it lantern-container /bin/bash
-
 ```
+
   </Step>
 </Steps>
 

@@ -2,7 +2,10 @@
 title: "Operations"
 ---
 
-<Note>All operations here are designed for embeddings that are of type `INTEGER[]`, `REAL[]`, or `pgvector`'s `VECTOR` type. Below, we use `REAL[]`</Note>
+<Note>
+  All operations here are designed for embeddings that are of type `INTEGER[]`,
+  `REAL[]`, or `pgvector`'s `VECTOR` type. Below, we use `REAL[]`
+</Note>
 
 ## Table Operations[](#table-operations "Direct link to Table Operations")
 
@@ -20,7 +23,6 @@ CREATE TABLE books (
     text_embedding REAL[3],
     reviews TEXT
 );
-
 ```
 
 ### Add embedding column to table[](#add-embedding-column-to-table "Direct link to Add embedding column to table")
@@ -29,7 +31,6 @@ Add an additional embedding column to your table.
 
 ```sql
 ALTER TABLE books ADD COLUMN reviews_embedding REAL[];
-
 ```
 
 ## Storing Rows[](#storing-rows "Direct link to Storing Rows")
@@ -42,7 +43,6 @@ Populate your table with embedding data.
 INSERT INTO books (id, title, author, published_at, text_url, text_embedding, reviews) VALUES
     (1, 'The Lightning Thief', 'Rick Riordan', 1999, 'https://lantern.dev', '{0,0,1}', NULL),
     (2, 'White Fang', 'Jack London', 2000, 'https://lantern.dev', '{1,0,1}', 'Good');
-
 ```
 
 ### Upsert embedding[](#upsert-embedding "Direct link to Upsert embedding")
@@ -54,7 +54,6 @@ INSERT INTO books (id, title, text_embedding) VALUES
     (4, 'The Lord of the Rings', '{1,1,0}')
 ON CONFLICT (id)
 DO UPDATE SET text_embedding = EXCLUDED.text_embedding;
-
 ```
 
 ### Update embeddings[](#update-embeddings "Direct link to Update embeddings")
@@ -62,14 +61,12 @@ DO UPDATE SET text_embedding = EXCLUDED.text_embedding;
 ```sql
 UPDATE books SET text_embedding = '{0,0,0}' WHERE id = 1;
 UPDATE books SET text_embedding = ARRAY[0,0,0] WHERE id = 2;
-
 ```
 
 ### Delete embeddings[](#delete-embeddings "Direct link to Delete embeddings")
 
 ```sql
 DELETE FROM books WHERE id = 1;
-
 ```
 
 ## Indexing[](#indexing "Direct link to Indexing")
@@ -91,7 +88,6 @@ WITH (
     ef = 4,
     dims = 3
 );
-
 ```
 
 Note: `dist_l2sq_ops` is a distance function. It can be substituted with other appropriate distance functions depending on your requirements.
@@ -113,7 +109,6 @@ WHERE
 ORDER BY
     text_embedding <-> '{0,0,0}'
 LIMIT 1;
-
 ```
 
 ### Select nearest rows without using index[](#select-nearest-rows-without-using-index "Direct link to Select nearest rows without using index")
@@ -129,5 +124,4 @@ FROM
 ORDER BY
     l2sq_dist(text_embedding, '{0,0,0}')
 LIMIT 2;
-
 ```
