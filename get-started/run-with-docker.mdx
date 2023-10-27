@@ -1,0 +1,11 @@
+---
+title: "Run with docker"
+description: "You can use [Docker](https://hub.docker.com/r/lanterndata/lantern/tags) image to quickly install Lantern with docker."
+---
+
+<Note>The image is based on the [official Postgres docker image](https://hub.docker.com/%5F/postgres). Please refer to the Postgres image documentation for a full list of supported features and flags.</Note>
+
+```bash
+docker run -p 5432:5432 -e 'POSTGRES_PASSWORD=postgres' lanterndata/lantern:latest-pg15
+
+```

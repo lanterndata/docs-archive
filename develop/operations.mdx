@@ -1,17 +1,14 @@
 ---
-sidebar_position: 1
+title: "Operations"
 ---
-# Operations
 
+<Note>All operations here are designed for embeddings that are of type `INTEGER[]`, `REAL[]`, or `pgvector`'s `VECTOR` type. Below, we use `REAL[]`</Note>
 
-> Note: All operations here are designed for embeddings that are of type `INTEGER[]`, `REAL[]`, or `pgvector`'s `VECTOR` type. Below, we use `REAL[]`
+## Table Operations[](#table-operations "Direct link to Table Operations")
 
-## Table Operations
-
-### Create table with embedding column
+### Create table with embedding column[](#create-table-with-embedding-column "Direct link to Create table with embedding column")
 
 Define a table structure that contains an embedding column.
-
 
 ```sql
 CREATE TABLE books (
@@ -23,48 +20,64 @@ CREATE TABLE books (
     text_embedding REAL[3],
     reviews TEXT
 );
+
 ```
 
-### Add embedding column to table
+### Add embedding column to table[](#add-embedding-column-to-table "Direct link to Add embedding column to table")
+
 Add an additional embedding column to your table.
+
 ```sql
 ALTER TABLE books ADD COLUMN reviews_embedding REAL[];
+
 ```
 
-## Storing Rows
+## Storing Rows[](#storing-rows "Direct link to Storing Rows")
 
-### Insert embeddings into the table
+### Insert embeddings into the table[](#insert-embeddings-into-the-table "Direct link to Insert embeddings into the table")
+
 Populate your table with embedding data.
+
 ```sql
 INSERT INTO books (id, title, author, published_at, text_url, text_embedding, reviews) VALUES
     (1, 'The Lightning Thief', 'Rick Riordan', 1999, 'https://lantern.dev', '{0,0,1}', NULL),
     (2, 'White Fang', 'Jack London', 2000, 'https://lantern.dev', '{1,0,1}', 'Good');
+
 ```
 
-### Upsert embedding
+### Upsert embedding[](#upsert-embedding "Direct link to Upsert embedding")
+
 Insert a new row or update the embedding of an existing row.
+
 ```sql
 INSERT INTO books (id, title, text_embedding) VALUES
     (4, 'The Lord of the Rings', '{1,1,0}')
 ON CONFLICT (id)
 DO UPDATE SET text_embedding = EXCLUDED.text_embedding;
+
 ```
 
-### Update embeddings
+### Update embeddings[](#update-embeddings "Direct link to Update embeddings")
+
 ```sql
 UPDATE books SET text_embedding = '{0,0,0}' WHERE id = 1;
 UPDATE books SET text_embedding = ARRAY[0,0,0] WHERE id = 2;
+
 ```
 
-### Delete embeddings
+### Delete embeddings[](#delete-embeddings "Direct link to Delete embeddings")
+
 ```sql
 DELETE FROM books WHERE id = 1;
+
 ```
 
-## Indexing
+## Indexing[](#indexing "Direct link to Indexing")
 
-### Create an index
+### Create an index[](#create-an-index "Direct link to Create an index")
+
 Boost the efficiency of your queries by indexing the embedding column.
+
 ```sql
 CREATE INDEX
     book_index
@@ -78,13 +91,17 @@ WITH (
     ef = 4,
     dims = 3
 );
+
 ```
+
 Note: `dist_l2sq_ops` is a distance function. It can be substituted with other appropriate distance functions depending on your requirements.
 
-## Querying Rows
+## Querying Rows[](#querying-rows "Direct link to Querying Rows")
 
-### Select nearest row with filters using index
+### Select nearest row with filters using index[](#select-nearest-row-with-filters-using-index "Direct link to Select nearest row with filters using index")
+
 Query the database to retrieve records based on the proximity of embedding values using the index
+
 ```sql
 SELECT
     title,
@@ -96,10 +113,13 @@ WHERE
 ORDER BY
     text_embedding <-> '{0,0,0}'
 LIMIT 1;
+
 ```
 
-### Select nearest rows without using index
+### Select nearest rows without using index[](#select-nearest-rows-without-using-index "Direct link to Select nearest rows without using index")
+
 If you choose not to use an index, you can still fetch records based on embedding proximity.
+
 ```sql
 SELECT
     title,
@@ -109,4 +129,5 @@ FROM
 ORDER BY
     l2sq_dist(text_embedding, '{0,0,0}')
 LIMIT 2;
+
 ```
