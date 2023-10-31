@@ -1,27 +1,18 @@
 ---
-title: "Install from Released Binaries"
+title: "Install using Homebrew"
 ---
 
 ## Prerequisites
-- PostgreSQL 11, 12, 13, 14, 15 and 16
+- [Homebrew](https://brew.sh/)
 
 ## Supported platforms
-- Linux (x86_64)
-- Mac (intel)
-
-Use our releases from GitHub
-
-You can get available versions on [releases](https://github.com/lanterndata/lantern/releases) page
+- Mac
 
 ## Installation
 
 ```bash
-cd /tmp
-LDB_VERSION=0.0.3
-wget "https://github.com/lanterndata/lantern/releases/download/v${LDB_VERSION}/lantern-${LDB_VERSION}.tar"
-tar xf "lantern-${LDB_VERSION}.tar"
-cd "lantern-${LDB_VERSION}"
-make install
+brew tap lanterndata/lantern
+brew install lantern && lantern_install
 ```
 
 ## Test
@@ -37,5 +28,3 @@ SELECT * FROM lantern_demo ORDER BY v <-> ARRAY[1,1,1];
 
 EXPLAIN SELECT id FROM lantern_demo ORDER BY v <-> ARRAY[1,1,1]; -- index scan should be done
 ```
-
-<Note>You can replace 0.0.3 with the version you want to install</Note>

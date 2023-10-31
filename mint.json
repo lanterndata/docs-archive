@@ -1,69 +1,69 @@
 {
-    "name": "Lantern",
-    "logo": {
-      "light": "/logo/light.svg",
-      "dark": "/logo/dark.svg"
+  "name": "Lantern",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#ff564b",
+    "light": "#ff564b",
+    "dark": "#ff564b"
+  },
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/lanterndata/lantern"
+  },
+  "anchors": [
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://lantern.dev/blog"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Introduction",
+      "pages": ["introduction/intro", "introduction/what-is-lantern"]
     },
-    "favicon": "/favicon.png",
-    "colors": {
-      "primary": "#ff564b",
-      "light": "#ff564b",
-      "dark": "#ff564b"
-    },
-    "topbarCtaButton": {
-      "type": "github",
-      "url": "https://github.com/lanterndata/lantern"
-    },
-    "anchors": [
-      {
-        "name": "Blog",
-        "icon": "newspaper",
-        "url": "https://lantern.dev/blog"
-      }
-    ],
-    "navigation": [
-        {
-            "group": "What is Lantern",
-            "pages": [
-              "introduction"
-            ]
-          },
-          {
-            "group": "Get Started",
-            "pages": [
-              "get-started/build-from-source",
-              "get-started/install-from-binaries",
-              "get-started/run-with-docker",
-              "get-started/migrate-from-pgvector",
-              "get-started/playground",
-              "get-started/lantern-cloud"
-            ]
-          },
-          {
-            "group": "Develop",
-            "pages": [
-              "develop/operations",
-              "develop/functions"
-            ]
-          },
-          {
-            "group": "Contributing",
-            "pages": [
-              "contributing/overview",
-              "contributing/docker",
-              "contributing/vscode"
-            ]
-          }          
-    ],
-    "footerSocials":
-      {
-          "discord": "https://discord.gg/qFR3FMFRHv",
-          "twitter": "https://twitter.com/lanterndb"
-      },
-      "redirects": [
-        {
-          "source": "/blog/2023/09/13/hello-world",
-          "destination": "https://lantern.dev/blog/hello-world"
-        }
+    {
+      "group": "Get Started",
+      "pages": [
+        "get-started/overview",
+        "get-started/lantern-cloud",
+        "get-started/install-from-binaries",
+        "get-started/build-from-source",
+        "get-started/install-with-homebrew",
+        "get-started/run-with-docker",
+        "get-started/migrate-from-pgvector"
       ]
-  }
+    },
+    {
+      "group": "Develop",
+      "pages": [
+        "develop/overview",
+        "develop/operations",
+        "develop/distance-functions",
+        "develop/index-parameters"
+      ]
+    },
+    {
+      "group": "Contributing",
+      "pages": [
+        "contributing/overview",
+        "contributing/docker",
+        "contributing/vscode"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "discord": "https://discord.gg/qFR3FMFRHv",
+    "twitter": "https://twitter.com/lanterndb"
+  },
+  "redirects": [
+    {
+      "source": "/blog/2023/09/13/hello-world",
+      "destination": "https://lantern.dev/blog/hello-world"
+    }
+  ]
+}
