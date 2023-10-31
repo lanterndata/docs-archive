@@ -1,0 +1,48 @@
+---
+title: "Install ONNX Runtime"
+---
+
+[ONNX Runtime](https://onnxruntime.ai/) is required for Lantern CLI Embeddings.
+
+## Installation
+
+<Steps>
+  <Step title="Get ONNX Runtime library">
+     Get ONNX Runtime library from [Github release page](https://github.com/microsoft/onnxruntime/releases/tag/v1.16.1)
+     ```bash
+     PLATFORM=linux
+     ARCH=x64
+     ONNX_VERSION=1.16.1
+
+     wget "https://github.com/microsoft/onnxruntime/releases/download/v${ONNX_VERSION}/onnxruntime-${PLATFORM}-${ARCH}-${ONNX_VERSION}.tgz"
+     ```
+     <Note>
+     If you have GPU, download the GPU version of onnxruntime library.
+     </Note>
+  </Step>
+  
+  <Step title="Extract archive">
+    Extract the downloaded archive in `/usr/local/lib`
+    ```bash
+      mkdir -p /usr/local/lib
+      tar xzf "onnxruntime-${PLATFORM}-${ARCH}-${ONNX_VERSION}.tar" -C /usr/local/lib
+    ```
+  </Step>
+
+ <Step title="Setup environment">
+  Export path to onnx library 
+  ```bash
+    export ORT_STRATEGY=system
+    export ORT_DYLIB_PATH=/usr/local/lib/onnxruntime-${PLATFORM}-${ARCH}-${ONNX_VERSION}/lib/libonnxruntime.so
+  ```
+  <Note>
+  On MacOS the library will have `.dylib` extension instead of `.os`
+  You can export this variables from your shell profile or add them to `ld` search path like this:
+  ```bash
+  echo "/usr/local/lib/onnxruntime-${PLATFORM}-${ARCH}-${ONNX_VERSION}/lib/libonnxruntime.so" > /etc/ld.so.conf.d/onnx.conf
+  ldconfig
+  ```
+  </Note>
+ </Step>
+</Steps>
+

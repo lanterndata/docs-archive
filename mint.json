@@ -48,6 +48,15 @@
       ]
     },
     {
+      "group": "Lantern CLI",
+      "pages": [
+        "lantern-cli/overview",
+        "lantern-cli/lantern-index",
+        "lantern-cli/lantern-embeddings",
+        "lantern-cli/lantern-daemon"
+      ]
+    },
+    {
       "group": "Contributing",
       "pages": [
         "contributing/overview",

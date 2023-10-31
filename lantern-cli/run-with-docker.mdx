@@ -1,0 +1,15 @@
+---
+title: "Run with docker"
+description: "You can use [Docker](https://hub.docker.com/r/lanterndata/lantern-cli/tags) image to quickly run Lantern CLI with docker."
+---
+
+
+## Run CPU image
+```bash
+docker run -rm lanterndata/lantern-cli:latest -h
+```
+
+## Run GPU image
+```bash
+nvidia-docker run -rm lanterndata/lantern-cli:gpu-latest -h
+```
