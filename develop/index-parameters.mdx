@@ -16,13 +16,13 @@ title: "Index Parameters"
   Maximum allowed value for `ef_construction` is 400
 </ResponseField>
 <ResponseField name="ef" type="number"  default="64">
-The size of the dynamic list for the nearest neighbors (used during search). Higher `ef` leads to more accurate but slower search. (this parameter is also controlled via seesion based `lantern_hnsw.ef_search` variable)
+The size of the dynamic list for the nearest neighbors (used during search). Higher `ef` leads to more accurate but slower search. (this parameter is also controlled via seesion based `hnsw.ef` variable)
 
   Maximum allowed value for `ef` is 400
   
   <Note>
-  This parameter is also controlled via session based `lantern_hnsw.ef_search` variable, which has precedence over this parameter
-  `sql SET lantern_hnsw.ef_search=128`
+  This parameter is also controlled via session based `hnsw.ef` variable, which has precedence over this parameter
+  `sql SET hnsw.ef=128`
   </Note>
 </ResponseField>
 
@@ -44,7 +44,7 @@ The size of the dynamic list for the nearest neighbors (used during search). Hig
 
 **Index parameters**
 
-<ResponseField name="lantern_hnsw.init_k" type="string" default="10">
+<ResponseField name="hnsw.init_k" type="string" default="10">
   Number of items you are expecting from index to return.
   This is session based variable.
   <Note> 
@@ -53,18 +53,18 @@ The size of the dynamic list for the nearest neighbors (used during search). Hig
   ```sql
   SELECT * FROM lantern_demo WHERE v <-> ARRAY[1,1,1] LIMIT 100;
   ```
-  You should set the `lantern_hnsw.init_k` to 100.
+  You should set the `hnsw.init_k` to 100.
   So the query will become like this
   ```sql
-  SET lantern_hnsw.init_k = 100;
+  SET hnsw.init_k = 100;
   SELECT * FROM lantern_demo WHERE v <-> ARRAY[1,1,1] LIMIT 100;
   ```
 
-  Maximum allowed value for `lantern_hnsw.init_k` is 1000
+  Maximum allowed value for `hnsw.init_k` is 1000
   </Note>
 </ResponseField>
 
-<ResponseField name="lantern_hnsw.ef_search" type="string" default="64">
+<ResponseField name="hnsw.ef" type="string" default="64">
   This is session based variable which will controll the `ef` parameter of your index.
   
   <Note> 
@@ -76,12 +76,12 @@ The size of the dynamic list for the nearest neighbors (used during search). Hig
   ```
   And do a query like this
   ```sql
-  SET lantern_hnsw.ef_search = 128;
+  SET hnsw.ef = 128;
   SELECT * FROM lantern_demo WHERE v <-> ARRAY[1,1,1];
   ```
   Your query will run with `ef` parameter set to 128 instead of 16.
 
-  Maximum allowed value for `lantern_hnsw.ef_search` is 400
+  Maximum allowed value for `hnsw.ef` is 400
   </Note>
 </ResponseField>
 
