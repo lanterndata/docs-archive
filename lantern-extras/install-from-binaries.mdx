@@ -1,0 +1,37 @@
+---
+title: "Install from Released Binaries"
+---
+
+## Prerequisites
+- PostgreSQL 11, 12, 13, 14, 15 or 16
+
+## Supported platforms
+- Linux (x86_64)
+
+Use our releases from GitHub
+
+You can get available versions on [releases](https://github.com/lanterndata/lantern/releases) page
+
+## Installation
+
+```bash
+cd /tmp
+VERSION=0.0.3
+wget "https://github.com/lanterndata/lantern_extras/releases/download/v${VERSION}/lantern-extras-${VERSION}.tar"
+tar xf "lantern-extras-${VERSION}.tar"
+cd "lantern-extras-${VERSION}"
+make install
+```
+
+## Test
+<Note>
+The first run of each model will take longer as it will download the model file and tokenizer.
+</Note>
+```sql
+CREATE EXTENSION lantern_extras;
+SELECT get_available_models(); -- get available models
+SELECT clip_text('Hello world!'); -- generate embeddings using openai clip model (textual)
+SELECT clip_image('https://storage.googleapis.com/lanterndata/images/icon100x100.png'); -- generate embeddings using openai clip model (visual)
+-- using any model from the list
+SELECT text_embedding('BAAI/bge-small-en', 'Hello world!');
+```

@@ -1,0 +1,37 @@
+---
+title: "Run with docker"
+description: "You can use [Docker](https://hub.docker.com/r/lanterndata/lantern-bitnami/tags) image to quickly install Lantern with docker."
+---
+
+<Note>The image is based on the [bitname Postgres docker image](https://github.com/bitnami/containers/tree/2d6f8d92e82e98a042a9273abc3ecedcd127d241/bitnami/postgresql). Please refer to the Postgres image documentation for a full list of supported features and flags.</Note>
+
+
+## Test
+
+<Steps>
+  <Step title="Run docker image">
+  ```bash
+  docker run -p 5432:5432 --name lantern-extras -e 'ALLOW_EMPTY_PASSWORD=yes' -d lanterndata/lantern-bitnami
+  ```
+  </Step>
+  <Step title="Connect to database">
+  ```bash
+  docker exec -ti lantern-extras psql -U postgres
+  ```
+  </Step>
+  
+  <Step title="Test Lantern">
+  <Note>
+  The first run of each model will take longer as it will download the model file and tokenizer.
+  </Note>
+  ```sql
+  CREATE EXTENSION lantern_extras;
+  SELECT get_available_models(); -- get available models
+  SELECT clip_text('Hello world!'); -- generate embeddings using openai clip model (textual)
+  SELECT clip_image('https://storage.googleapis.com/lanterndata/images/icon100x100.png'); -- generate embeddings using openai clip model (visual)
+  -- using any model from the list
+  SELECT text_embedding('BAAI/bge-small-en', 'Hello world!');
+  ```
+  </Step>
+</Steps>
+

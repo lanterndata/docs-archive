@@ -57,6 +57,15 @@
       ]
     },
     {
+      "group": "Lantern Extras",
+      "pages": [
+        "lantern-extras/overview",
+        "lantern-extras/run-with-docker",
+        "lantern-extras/install-from-binaries",
+        "lantern-extras/build-from-source"
+      ]
+    },
+    {
       "group": "Contributing",
       "pages": [
         "contributing/overview",
