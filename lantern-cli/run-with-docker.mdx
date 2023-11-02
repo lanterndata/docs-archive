@@ -13,3 +13,13 @@ docker run --rm lanterndata/lantern-cli -h
 ```bash
 nvidia-docker run --rm lanterndata/lantern-cli:gpu -h
 ```
+
+<Note>
+When running `create-embeddings` command pass `-v lantern-models:/models` to Docker and `--data-path /models` to CLI, so the downloaded models will persist in a Docker volume.
+Example:
+```bash
+docker run -v lantern-models:/models --rm --network host lanterndata/lantern-cli create-embeddings --model 'BAAI/bge-large-en' --uri 'postgresql://postgres@host.docker.internal:5432/postgres' --table "wiki" --column "content" --out-column "content_embedding" --pk "id" --batch-size 40 --data-path /models
+```
+
+In case of `start-daemon` command, just pass `-v lantern-daemon-data:/var/lib/lantern-daemon` to Docker
+</Note>
