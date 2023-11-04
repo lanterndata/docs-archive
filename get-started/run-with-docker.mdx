@@ -6,5 +6,32 @@ description: "You can use [Docker](https://hub.docker.com/r/lanterndata/lantern/
 <Note>The image is based on the [official Postgres docker image](https://hub.docker.com/%5F/postgres). Please refer to the Postgres image documentation for a full list of supported features and flags.</Note>
 
 ```bash
-docker run -p 5432:5432 -e 'POSTGRES_PASSWORD=postgres' lanterndata/lantern:latest-pg15
+docker run -p 5432:5432 --name lantern-demo -e 'POSTGRES_PASSWORD=postgres' -d lanterndata/lantern:latest-pg15
 ```
+
+## Test
+
+<Steps>
+  <Step title="Connect to database">
+  ```bash
+  docker exec -ti lantern-demo psql -U postgres
+  ```
+  </Step>
+  
+  <Step title="Test Lantern">
+  ```sql
+  CREATE EXTENSION lantern;
+  CREATE TABLE lantern_demo (id SERIAL, v REAL[3]);
+  INSERT INTO lantern_demo (v) VALUES ('{0, 0, 0}'), ('{0, 1, 0}'), ('{1, 0, 0}');
+  CREATE INDEX ON lantern_demo USING hnsw(v) WITH (m=4, ef_construction=8);
+
+  SET enable_seqscan=off; -- to always use index on scan
+
+  SELECT * FROM lantern_demo ORDER BY v <-> ARRAY[1,1,1];
+
+  EXPLAIN SELECT id FROM lantern_demo ORDER BY v <-> ARRAY[1,1,1]; -- index scan should be done
+  ```
+  </Step>
+
+</Steps>
+
