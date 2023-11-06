@@ -21,7 +21,7 @@ INSERT INTO embeddings (v) VALUES ('{0,0,0}'), ('{0,1,0}'), ('{1,0,0}');
 
 ## Run Index Creation
 ```bash
-lantern-cli create-embeddings  --model 'microsoft/all-MiniLM-L13-v2'  --uri 'postgresql://[username]:[password]@localhost:5432/[db]' --table "embeddings" --column "v" -m 10 --efc 128 --ef 64 --metric-kind l2sq --out /tmp/index.usearch
+lantern-cli create-index --uri 'postgresql://[username]:[password]@localhost:5432/[db]' --table "embeddings" --column "v" -m 10 --efc 128 --ef 64 --metric-kind l2sq --out /tmp/index.usearch
 ```
 
 <Note>
@@ -51,7 +51,7 @@ Run `bash lantern-cli create-index --help` to get available CLI parameters
 ```bash
 Create external index
 
-Usage: lantern-cli create-index [OPTIONS] --uri <URI> --table <TABLE> --column <COLUMN> -d <DIMS>
+Usage: lantern-cli create-index --uri <URI> --table <TABLE> --column <COLUMN> -d <DIMS> [MORE OPTIONS]
 
 Options:
   -u, --uri <URI>                  Fully associated database connection string including db name
