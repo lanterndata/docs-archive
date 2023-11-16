@@ -19,6 +19,11 @@
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://lantern.dev/blog"
+    },
+    {
+      "name": "Learn",
+      "icon": "glasses",
+      "url": "https://lantern.dev/learn"
     }
   ],
   "navigation": [
