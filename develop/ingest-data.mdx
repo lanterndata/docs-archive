@@ -1,0 +1,14 @@
+---
+title: "Bring Data to Lantern"
+---
+
+One of the most performant ways to insert data into your Lantern Database (Cloud or self-hosted)
+is to use the `psql` utility of postgres.
+
+```bash
+psql 'YOUR_DATABASE_URL_HERE' -c "\COPY <TABLE_NAME> FROM <FILENAME>.csv WITH delimiter ',' CSV"
+```
+
+You can also use `INSERT` statements to insert data into postgres.
+This works well for small amounts of data but is slow for bulk inserts.
+For an example showing bulk `INSERT`s from a python environment, [refer here](https://gist.github.com/var77/dbf9b8c9845356d51a5588f6c7020cd1).

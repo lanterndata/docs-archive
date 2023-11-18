@@ -47,6 +47,7 @@
       "group": "Develop",
       "pages": [
         "develop/overview",
+        "develop/ingest-data",
         "develop/operations",
         "develop/distance-functions",
         "develop/index-parameters"
