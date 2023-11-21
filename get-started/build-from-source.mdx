@@ -1,6 +1,5 @@
 ---
 title: "Build from Source"
-description: "Steps to build Lantern yourself"
 ---
 
 ## Prerequisites
@@ -12,8 +11,11 @@ description: "Steps to build Lantern yourself"
 - Corresponding development package for PostgreSQL (postgresql-server-dev-$version)
 
 ## Supported platforms
+
 - Linux
 - Mac
+
+## Installation
 
 <Steps>
   <Step title="Clone repository from GitHub">
@@ -33,8 +35,13 @@ cmake ..
   <Step title="Install the extension">
 
 ```bash
-# in case you will get permissions issue try with "sudo"
-make install 
+make install
 ```
+
+<Note>Try running with `sudo`, if you get permissions issues</Note>
   </Step>
 </Steps>
+
+## Test
+
+<Snippet file="test-lantern.mdx" />

@@ -1,0 +1,8 @@
+```sql
+CREATE EXTENSION lantern;
+CREATE TABLE lantern_demo (id SERIAL, v REAL[3]);
+INSERT INTO lantern_demo (v) VALUES ('{0, 0, 0}'), ('{0, 1, 0}'), ('{1, 0, 0}');
+CREATE INDEX ON lantern_demo USING hnsw(v) WITH (m=4, ef_construction=8);
+SET enable_seqscan=off; -- to always use index on scan
+SELECT * FROM lantern_demo ORDER BY v <-> ARRAY[1,1,1];
+```
