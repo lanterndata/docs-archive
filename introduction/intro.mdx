@@ -1,21 +1,24 @@
 ---
-title: "Introduction"
+title: "Lantern"
 ---
 
-Lantern is the only databse you need for your AI applications!
+Lantern is the only database you need for your AI applications.
 
-- **Built on top of Postgres** - no need to learn new technologies, you can use the SQL you are already familiar with and focus on writing the application logic
-- **Blazingly fast index creation for millions of vectors** - the fastest index creation times among others. Create an HNSW index for your data in minutes (check [blog post](https://lantern.dev/blog/hnsw-index-creation) for more info)
-- **Search similiar vectors using different distance functions** - we support euclidean, cosine and hamming distance functions
-- **Create AI embeddings for your data with Lantern** - we provide the best developer experience for creating vector embeddings using our supported sentence transformer models without leaving your database
-- **Fully Managed** - with Lantern Cloud you can focus on your bussiness logic rather than spending time on managing your database deployments
-- **Open Source** - Lantern is 100% open-source (p.s don't forget to ⭐ on [Github](https://github.com/lanterndata/lantern.git))
+- **Built on top of Postgres** - No need to integrate a new library, you can just write another SQL query. We support Postgres 11 - 16.
+- **Fast index creation that scales to millions of vectors** - Create an HNSW index for your data in minutes (see our [blog post](https://lantern.dev/blog/hnsw-index-creation) for benchmarks)
+- **Create embeddings without worrying about infrastructure** - With Lantern Cloud, simply select the model you'd like to use to embed your data, and we'll handle the rest. No need to worry about finding the right library, switching languages, or handling API call failures
+- **_Coming Soon:_ Index hyperparameter optimization** - With Lantern Cloud, we'll automatically tune your index for you, so you don't have to worry about finding the right set of parameters, and changing them over time
 
 ## Getting Started[](#getting-started "Direct link to Getting Started")
-Check our [Getting Started](/get-started/overview) guide to get Lantern up and running in a few clicks!
+
+The easiest way to get started with Lantern is with [Lantern Cloud](https://lantern.dev). Lantern Cloud is a fully managed database offering with support for embedding generation and management.
+
+Since Lantern is 100% open source, you're welcome to self host Lantern (p.s don't forget to ⭐ on [Github](https://github.com/lanterndata/lantern.git)). We offer multiple guides to get started, including [Docker](/getting-started/run-with-docker), [binaries](/getting-started/build-from-source), and [brew](/getting-started/install-with-homebrew). For further customization, you can also [build from source]('/getting-started/build-from-source).
 
 ## Develop[](#develop "Direct link to Develop")
-Check our [Development Guide](/develop/overview) to learn more about how to use Lantern.
+
+Check our [Development Guide](/develop/overview) to learn more about how to use Lantern. With a single operator, you can query your vectors and your existing data together. We support multiple distance functions.
 
 ## Contributing[](#contributing "Direct link to Contributing")
-If you want to contribute check our [Contribution Guide](/contributing/overview)
+
+We welcome contributions! If you're interested, check out our [Contribution Guide](/contributing/overview) for tips to get started.

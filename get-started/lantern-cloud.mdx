@@ -5,38 +5,15 @@ description: "The best place to run Lantern"
 
 ## Sign Up
 
-Steps to sign up in Lantern Cloud
+Sign up for Lantern Cloud [here](https://lantern.dev). We're currently running a closed beta program. Reach out at [support@lantern.dev](mailto:support@lantern.dev) for access. We'd love to hear more about your use case and we're happy to help.
 
 ## Run your database
 
-Steps to run the database in Lantern Cloud
+Once you have a database URL, you can access your database using `psql` and run vector queries. See our [Develop Guide](/develop/overview) for more details.
 
-## Test
-
-<Steps>
-  <Step title="Get your database url">
-  Copy your database URL from the dashboard
-  </Step>
-
-  <Step title="Connect to database">
-  ```bash
-  psql 'YOUR_DATABASE_URL_HERE'
-  ```
-  </Step>
-  
-  <Step title="Test Lantern">
-  ```sql
-  CREATE TABLE lantern_demo (id SERIAL, v REAL[3]);
-  INSERT INTO lantern_demo (v) VALUES ('{0, 0, 0}'), ('{0, 1, 0}'), ('{1, 0, 0}');
-  CREATE INDEX ON lantern_demo USING hnsw(v) WITH (m=4, ef_construction=8);
-
-  SET enable_seqscan=off; -- to always use index on scan
-
-  SELECT * FROM lantern_demo ORDER BY v <-> ARRAY[1,1,1];
-
-  EXPLAIN SELECT id FROM lantern_demo ORDER BY v <-> ARRAY[1,1,1]; -- index scan should be done
-  ```
-  </Step>
-
-</Steps>
-
+```sql
+CREATE TABLE lantern_demo (id SERIAL, v REAL[3]);
+INSERT INTO lantern_demo (v) VALUES ('{0, 0, 0}'), ('{0, 1, 0}'), ('{1, 0, 0}');
+CREATE INDEX ON lantern_demo USING hnsw(v) WITH (m=4, ef_construction=8);
+SELECT * FROM lantern_demo ORDER BY v <-> ARRAY[1,1,1];
+```

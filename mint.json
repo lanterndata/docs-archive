@@ -29,7 +29,7 @@
   "navigation": [
     {
       "group": "Introduction",
-      "pages": ["introduction/intro", "introduction/what-is-lantern"]
+      "pages": ["introduction/intro"]
     },
     {
       "group": "Get Started",
