@@ -39,8 +39,7 @@
         "get-started/install-from-binaries",
         "get-started/build-from-source",
         "get-started/install-with-homebrew",
-        "get-started/run-with-docker",
-        "get-started/migrate-from-pgvector"
+        "get-started/run-with-docker"
       ]
     },
     {
@@ -50,6 +49,12 @@
         "develop/operations",
         "develop/distance-functions",
         "develop/index-parameters"
+      ]
+    },
+    {
+      "group": "Migrate",
+      "pages": [
+        "migrate/pgvector"
       ]
     },
     {

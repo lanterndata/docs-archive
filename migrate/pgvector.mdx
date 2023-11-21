@@ -18,6 +18,7 @@ CREATE INDEX vector_idx ON lantern_pgvector USING hnsw(v vector_l2_ops) WITH (m=
 ```
 
 You can install Lantern over it without any issues
+
 ```sql
 SET enable_seqscan=off; -- Always use the index on scans for demonstration purposes
 
@@ -30,5 +31,8 @@ EXPLAIN SELECT * FROM lantern_pgvector ORDER BY v <-> '[1,1,1]'; -- You can veri
 ```
 
 <Note>
-To completily remove pgvector from your database you will need to migrate your data type from `vector` to `REAL[]` and then drop the extension.
+  To completily remove pgvector from your database you will need to migrate your
+  data type from `vector` to `REAL[]` and then drop the extension.
 </Note>
+
+Feel free to reach out to [support@lantern.dev](mailto:support@lantern.dev) for assistance.
