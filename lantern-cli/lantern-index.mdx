@@ -2,16 +2,17 @@
 title: "Lantern Index"
 ---
 
-With Lantern CLI you can create HNSW index for your vector data locally without using any third party APIs.
+With Lantern CLI you can create an HNSW index for your vector data locally without using any third party APIs.
 
 ## Prerequisites
+
 - [Lantern CLI](/lantern-cli/overview)
 - Running Postgres database with [Lantern extension](/get-started/overview) installed
 
-
 ## Set Up Data
+
 <Note>
-You can skip this step if you already have vector data in your database
+  You can skip this step if you already have vector data in your database
 </Note>
 
 ```sql
@@ -20,16 +21,20 @@ INSERT INTO embeddings (v) VALUES ('{0,0,0}'), ('{0,1,0}'), ('{1,0,0}');
 ```
 
 ## Run Index Creation
+
 ```bash
 lantern-cli create-index --uri 'postgresql://[username]:[password]@localhost:5432/[db]' --table "embeddings" --column "v" -m 10 --efc 128 --ef 64 --metric-kind l2sq --out /tmp/index.usearch
 ```
 
 <Note>
-If you have generated index file in a different server, copy the index file to your database server in a location where the user running database will have the necessarry permissions to access the file.
-You can put it in `/tmp/index.usearch` and run `chmod 766 /tmp/index.usearch` on it.
+  If you have generated index file in a different server, copy the index file to
+  your database server in a location where the user running database will have
+  the necessarry permissions to access the file. You can put it in
+  `/tmp/index.usearch` and run `chmod 766 /tmp/index.usearch` on it.
 </Note>
 
 ## Import Index to Database
+
 You can now import the index file to your database and use the index!
 
 ```sql
@@ -42,12 +47,14 @@ EXPLAIN SELECT * FROM embeddings WHERE v <-> ARRAY[1,1,1];
 ```
 
 <Note>
-You can read more about the benchmarking and performance of Lantern Index in [this](https://lantern.dev/blog/hnsw-index-creation) blog post.
+  You can read more about the benchmarking and performance of Lantern Index in
+  [this](https://lantern.dev/blog/hnsw-index-creation) blog post.
 </Note>
 
 ## CLI parameters
 
 Run `bash lantern-cli create-index --help` to get available CLI parameters
+
 ```bash
 Create external index
 
@@ -64,4 +71,4 @@ Options:
       --metric-kind <METRIC_KIND>  Distance algorithm [default: l2sq] [possible values: l2sq, cos, hamming]
   -o, --out <OUT>                  Index output file [default: index.usearch]
   -h, --help                       Print help
- ```
+```
