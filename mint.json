@@ -54,7 +54,9 @@
     {
       "group": "Migrate",
       "pages": [
-        "migrate/pgvector"
+        "migrate/postgres-cloud",
+        "migrate/pgvector-self",
+        "migrate/pgvector-cloud"
       ]
     },
     {
