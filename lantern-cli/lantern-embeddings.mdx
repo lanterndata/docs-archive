@@ -40,6 +40,24 @@ clip/ViT-B-32-visual - type: visual, downloaded: true
 `type` - if visual you should provide either image url or image path as input to generate embeddings for the image data
 </Note>
 
+Below is the table with specifications for each model
+
+| Model Name                             | Dimensions | Max Tokens | Avg Speed in Cloud
+|--------------------------------------- | ---------- | ---------- | ---------------
+|BAAI/bge-small-en                       | 384        | 512        | 600 emb/s
+|microsoft/all-MiniLM-L12-v2             | 384        | 128        | 600 emb/s
+|clip/ViT-B-32-textual                   | 512        | 77         | 400 emb/s
+|intfloat/e5-base-v2                     | 768        | 512        | 110 emb/s
+|thenlper/gte-base                       | 768        | 128        | 100 emb/s
+|transformers/multi-qa-mpnet-base-dot-v1 | 768        | 250        | 55 emb/s
+|BAAI/bge-base-en                        | 768        | 512        | 100 emb/s
+|microsoft/all-mpnet-base-v2             | 768        | 128        | 100 emb/s
+|BAAI/bge-large-en                       | 1024       | 512        | 20 emb/s
+|intfloat/e5-large-v2                    | 1024       | 512        | 40 emb/s
+|llmrails/ember-v1                       | 1024       | 512        | 40 emb/s
+|thenlper/gte-large                      | 1024       | 128        | 20 emb/s
+
+
 ## Set Up Data
 <Note>
 You can skip this step if you already have data in your database
